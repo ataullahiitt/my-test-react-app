@@ -4,6 +4,13 @@ import Headers from "./components/headers";
 import { Route, Routes } from "react-router-dom";
 import { Container } from "react-bootstrap";
 
+
+const PageNotFound = () => {
+
+    return <>'404 - page not found!'</>
+}
+
+
 function App() {
 
     return (
@@ -14,6 +21,7 @@ function App() {
                     <Route path="/" />
                     <Route path="/login" Component={LoginPage} />
                     <Route path="/sign-up" Component={SignupPage} />
+                    <Route path="*" Component={PageNotFound} />
                 </Routes>
             </Container>
 
