@@ -6,15 +6,16 @@ on:
             - main
 jobs:
   Build-react-app:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
-      - name: Check out repository code
+      - name: Check out code
         uses: actions/checkout@v4
-      - name: Install dependency
-        run: npm install 
-      - name: Build app
-        run: npm run build
-      - name: List files in the repository
+
+      - name: Build and Deploy
         run: |
-          ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+          cd /home/ubuntu/my-test-react-app
+          git pull origin main
+          npm install
+          npm run build
+          sudo cp -R dist/ /var/www/vhosts/frontend/
+          sudo service nginx restart
