@@ -19,6 +19,11 @@ const Headers = () => {
                         </li>
 
                         <li className="nav-item">
+                            <Link className="nav-link" to={'/blogs'}>Blogs</Link>
+                        </li>
+
+
+                        <li className="nav-item">
                             <Link className="nav-link" to={'/sign-up'}>Sign up</Link>
                         </li>
                     </ul>
