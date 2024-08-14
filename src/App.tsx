@@ -7,7 +7,7 @@ import { Container } from "react-bootstrap";
 
 const PageNotFound = () => {
 
-    return <>'404 - page not found !'</>
+    return <>404 - page not found !</>
 }
 
 
